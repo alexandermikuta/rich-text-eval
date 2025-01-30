@@ -1,0 +1,57 @@
+{
+  "name": "rich-text-evaluation",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@analogjs/platform:vite",
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
+        }
+      },
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/rich-text-evaluation/.nitro",
+        "{workspaceRoot}/dist/rich-text-evaluation/ssr",
+        "{workspaceRoot}/dist/rich-text-evaluation/analog"
+      ],
+      "options": {
+        "main": "rich-text-evaluation/src/main.ts",
+        "configFile": "rich-text-evaluation/vite.config.ts",
+        "outputPath": "dist/rich-text-evaluation/client",
+        "tsConfig": "rich-text-evaluation/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rich-text-evaluation:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rich-text-evaluation:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "rich-text-evaluation:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@analogjs/vitest-angular:test",
+      "outputs": [
+        "{projectRoot}/coverage"
+      ]
+    }
+  },
+  "tags": [],
+  "sourceRoot": "./rich-text-evaluation/src"
+}
