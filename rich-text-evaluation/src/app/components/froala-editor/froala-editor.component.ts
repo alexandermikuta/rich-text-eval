@@ -15,8 +15,15 @@ export class FroalaEditorComponent{
   @Input() editorContent = 'default text';
 
   private froalaEditor: unknown;
+
   public options: object = {
     placeholderText: 'Edit Your Content Here!',
+    toolbarSticky: true,
+    // toolbarButtons: ['fontFamily', '|', 'fontSize', '|', 'paragraphFormat', '|', 'bold', 'italic', 'underline', 'undo', 'redo', 'codeView'],
+    fontFamilySelection: true,
+    fontSizeSelection: true,
+    paragraphFormatSelection: true,
+    imageUploadURL: 'http://localhost:3000/upload_image',
     events : {
       'froalaEditor.contentChanged' : function() {
         console.log('Content updated!');
