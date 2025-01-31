@@ -20,7 +20,6 @@
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
-  "nxCloudId": "679b3fce3b9bfa229e83c614",
   "targetDefaults": {
     "@nx/angular:ng-packagr-lite": {
       "cache": true,
