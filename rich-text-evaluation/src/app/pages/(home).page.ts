@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
-import { AnalogWelcomeComponent } from './analog-welcome.component';
+import { EvalGridComponent } from '../components/eval-grid/eval-grid.component';
 
 @Component({
   selector: 'rich-text-evaluation-home',
   
-  imports: [AnalogWelcomeComponent],
+  imports: [EvalGridComponent],
   template: `
-     <rich-text-evaluation-analog-welcome/>
+     <rich-text-evaluation-eval-grid/>
   `,
 })
 export default class HomeComponent {

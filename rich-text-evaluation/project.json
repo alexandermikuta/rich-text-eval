@@ -25,7 +25,16 @@
         "main": "rich-text-evaluation/src/main.ts",
         "configFile": "rich-text-evaluation/vite.config.ts",
         "outputPath": "dist/rich-text-evaluation/client",
-        "tsConfig": "rich-text-evaluation/tsconfig.app.json"
+        "tsConfig": "rich-text-evaluation/tsconfig.app.json",
+        "styles": [
+          "src/styles.css",
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+          "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+          "./node_modules/froala-editor/css/froala_style.min.css"
+        ],
+        "scripts": [
+            "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+        ]
       }
     },
     "serve": {
@@ -33,7 +42,7 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "rich-text-evaluation:build",
-        "port": 4200
+        "port": 4200,
       },
       "configurations": {
         "development": {

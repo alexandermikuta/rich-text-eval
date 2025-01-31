@@ -9,21 +9,21 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     cacheDir: `../node_modules/.vite`,
-    
+
     build: {
       outDir: '../dist/./rich-text-evaluation/client',
-      reportCompressedSize: true,    
+      reportCompressedSize: true,
       target: ['es2020'],
     },
     server: {
       fs: {
         allow: ['.'],
       },
-    },    
+    },
     plugins: [
-      
+
       analog(),
-      
+
       nxViteTsPaths(),
     ],
     test: {
